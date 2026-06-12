@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>カーラインナップ｜DRIVE CLUB TOKYO</title>
+<meta name="description" content="ロールスロイス カリナンからR34 GT-Rまで、全25台。DRIVE CLUB TOKYOの高級車・外車ラインナップと当日利用料金の一覧。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Shippori+Mincho:wght@500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --obsidian:#141413;
+  --coal:#1d1c1a;
+  --ivory:#f7f5f0;
+  --paper:#ffffff;
+  --champagne:#b3955c;
+  --champagne-soft:#cdb98c;
+  --graphite:#6b675f;
+  --hairline:#e3ded4;
+  --hairline-dark:rgba(255,255,255,.14);
+  --latin:'Marcellus',serif;
+  --mincho:'Shippori Mincho',serif;
+  --gothic:'Zen Kaku Gothic New',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--gothic);color:var(--obsidian);background:var(--ivory);font-size:15px;line-height:2;letter-spacing:.04em;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.eyebrow{font-family:var(--latin);font-size:12px;letter-spacing:.42em;color:var(--champagne);text-transform:uppercase}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;font-weight:500;font-size:13px;letter-spacing:.22em;padding:18px 44px;border:1px solid currentColor;transition:.35s}
+.btn .arr{font-family:var(--latin);transition:transform .35s}
+.btn:hover .arr{transform:translateX(6px)}
+.btn-gold{background:var(--champagne);border-color:var(--champagne);color:#fff}
+.btn-gold:hover{background:#a2854e}
+.btn-ghost{color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+
+/* ===== header ===== */
+header{position:fixed;inset:0 0 auto;z-index:100;background:rgba(20,20,19,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--hairline-dark)}
+header .bar{display:flex;align-items:center;justify-content:space-between;max-width:1360px;margin:0 auto;padding:14px 32px}
+.logo{font-family:var(--latin);font-size:19px;letter-spacing:.3em;color:#fff;white-space:nowrap}
+.logo small{display:block;font-family:var(--gothic);font-size:9px;letter-spacing:.34em;color:var(--champagne-soft);margin-top:2px}
+nav.gnav{display:flex;gap:38px;align-items:center}
+nav.gnav a{font-size:12px;letter-spacing:.2em;color:rgba(255,255,255,.85);position:relative;padding:4px 0}
+nav.gnav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--champagne);transition:.3s}
+nav.gnav a:hover::after{width:100%}
+.nav-cta{border:1px solid var(--champagne);color:var(--champagne-soft)!important;padding:9px 22px!important}
+.menu-btn{display:none;background:none;border:none;width:40px;height:40px;cursor:pointer;position:relative;z-index:120}
+.menu-btn span{position:absolute;left:8px;right:8px;height:1px;background:#fff;transition:.3s}
+.menu-btn span:nth-child(1){top:14px}.menu-btn span:nth-child(2){top:20px}.menu-btn span:nth-child(3){top:26px}
+.menu-btn.open span:nth-child(1){top:20px;transform:rotate(45deg)}
+.menu-btn.open span:nth-child(2){opacity:0}
+.menu-btn.open span:nth-child(3){top:20px;transform:rotate(-45deg)}
+
+/* ===== page hero ===== */
+.phero{background:var(--obsidian);color:#fff;padding:168px 32px 76px;position:relative;overflow:hidden}
+.phero::before{content:"FLEET";position:absolute;right:-2%;bottom:-18%;font-family:var(--latin);font-size:clamp(120px,22vw,300px);letter-spacing:.06em;color:rgba(255,255,255,.04);line-height:1;pointer-events:none}
+.phero-in{max-width:1360px;margin:0 auto}
+.phero h1{font-family:var(--mincho);font-weight:500;font-size:clamp(30px,4.4vw,48px);letter-spacing:.16em;margin-top:14px;line-height:1.6}
+.phero p.lead{margin-top:16px;font-size:13.5px;color:rgba(255,255,255,.7);max-width:640px}
+.bread{font-size:11px;letter-spacing:.16em;color:rgba(255,255,255,.5);margin-top:34px}
+.bread a:hover{color:var(--champagne-soft)}
+
+/* ===== layout: index rail + grid ===== */
+.lineup{max-width:1360px;margin:0 auto;padding:72px 32px 110px;display:grid;grid-template-columns:212px 1fr;gap:64px;align-items:start}
+.rail{position:sticky;top:108px}
+.rail .r-label{font-family:var(--latin);font-size:11px;letter-spacing:.4em;color:var(--champagne);margin-bottom:20px}
+.rail ul{list-style:none;border-left:1px solid var(--hairline)}
+.rail li a{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:9px 0 9px 20px;font-size:12.5px;letter-spacing:.14em;color:var(--graphite);border-left:1px solid transparent;margin-left:-1px;transition:.3s}
+.rail li a small{font-family:var(--latin);font-size:10px;letter-spacing:.12em;color:#b5b0a5}
+.rail li a:hover{color:var(--obsidian)}
+.rail li a.act{color:var(--obsidian);border-left:1px solid var(--champagne);font-weight:500}
+.rail-cta{margin-top:32px;padding-top:24px;border-top:1px solid var(--hairline);font-size:11.5px;line-height:1.9;color:var(--graphite)}
+.rail-cta a{display:inline-block;margin-top:10px;font-size:11.5px;letter-spacing:.18em;color:var(--champagne);border-bottom:1px solid var(--champagne);padding-bottom:2px}
+
+/* ===== brand sections ===== */
+.brand{scroll-margin-top:104px}
+.brand+.brand{margin-top:84px}
+.b-head{display:flex;align-items:baseline;gap:20px;border-bottom:1px solid var(--obsidian);padding-bottom:14px}
+.b-head h2{font-family:var(--latin);font-weight:400;font-size:clamp(22px,2.4vw,30px);letter-spacing:.12em}
+.b-head .b-jp{font-size:11.5px;letter-spacing:.2em;color:var(--graphite)}
+.b-head .b-count{margin-left:auto;font-family:var(--latin);font-size:12px;letter-spacing:.2em;color:var(--champagne)}
+.cars{display:grid;grid-template-columns:repeat(3,1fr);gap:38px 26px;margin-top:34px}
+.car{display:block;position:relative}
+.car .ph{overflow:hidden;aspect-ratio:4/3;background:#dcd7cb;position:relative}
+.car .ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.6,.2,1)}
+.car:hover .ph img{transform:scale(1.06)}
+.car .ph::after{content:"View →";position:absolute;right:0;bottom:0;background:var(--obsidian);color:var(--champagne-soft);font-family:var(--latin);font-size:10px;letter-spacing:.26em;padding:7px 14px;opacity:0;transform:translateY(4px);transition:.35s}
+.car:hover .ph::after{opacity:1;transform:none}
+.car h3{font-family:var(--mincho);font-weight:500;font-size:16px;letter-spacing:.08em;line-height:1.7;margin-top:16px}
+.car .c-price{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--hairline);margin-top:12px;padding-top:10px;font-size:11px;letter-spacing:.16em;color:var(--graphite)}
+.car .c-price b{font-family:var(--latin);font-weight:400;font-size:16px;letter-spacing:.04em;color:var(--obsidian)}
+.car .c-price b small{font-size:10px;color:var(--graphite)}
+
+/* ===== cta / footer ===== */
+.cta{background:var(--obsidian);color:#fff;text-align:center;padding:110px 24px}
+.cta h2{font-family:var(--mincho);font-weight:500;font-size:clamp(22px,3vw,32px);letter-spacing:.16em;line-height:1.8;margin-top:14px}
+.cta p{margin-top:16px;font-size:13px;color:rgba(255,255,255,.7)}
+.cta-actions{display:flex;gap:18px;justify-content:center;margin-top:42px;flex-wrap:wrap}
+.cta-tel{margin-top:32px;font-size:12px;color:rgba(255,255,255,.65)}
+.cta-tel a{font-family:var(--latin);font-size:22px;letter-spacing:.1em;color:#fff;margin-left:10px;border-bottom:1px solid var(--champagne)}
+footer{background:#0e0e0d;color:rgba(255,255,255,.55);padding:40px 24px;text-align:center;font-size:11px;letter-spacing:.16em}
+footer a{color:rgba(255,255,255,.75);border-bottom:1px solid rgba(255,255,255,.25)}
+footer .copyright{margin-top:18px;font-size:10px;color:rgba(255,255,255,.35);letter-spacing:.2em}
+
+/* ===== reveal ===== */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease}
+.rv.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+a:focus-visible,button:focus-visible{outline:2px solid var(--champagne);outline-offset:3px}
+
+/* ===== tablet ===== */
+@media (max-width:1100px){
+  .cars{grid-template-columns:repeat(2,1fr)}
+}
+/* ===== mobile ===== */
+@media (max-width:840px){
+  .lineup{grid-template-columns:1fr;gap:0;padding:0 0 90px}
+  .brand{padding:0 24px;scroll-margin-top:128px}
+  .brand+.brand{margin-top:72px}
+  /* index rail → sticky horizontal chips */
+  .rail{position:sticky;top:69px;z-index:60;background:rgba(247,245,240,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--hairline);padding:14px 0 0;margin-bottom:48px}
+  .rail .r-label{display:none}
+  .rail ul{display:flex;gap:8px;overflow-x:auto;border:none;padding:0 24px 14px;scrollbar-width:none}
+  .rail ul::-webkit-scrollbar{display:none}
+  .rail li{flex:0 0 auto}
+  .rail li a{border:1px solid var(--hairline);border-radius:999px;padding:6px 16px;margin:0;font-size:11.5px;white-space:nowrap;background:var(--paper)}
+  .rail li a small{display:none}
+  .rail li a.act{background:var(--obsidian);color:var(--ivory);border-color:var(--obsidian)}
+  .rail-cta{display:none}
+  .cars{grid-template-columns:1fr;gap:34px}
+  .phero{padding:130px 24px 60px}
+}
+@media (max-width:720px){
+  nav.gnav{position:fixed;inset:0;background:rgba(14,14,13,.97);flex-direction:column;justify-content:center;gap:34px;transform:translateX(100%);transition:.45s;z-index:110}
+  nav.gnav.open{transform:none}
+  nav.gnav a{font-size:15px;letter-spacing:.3em}
+  .menu-btn{display:block}
+  .cta-actions .btn{width:100%}
+}
+/* small phones: keep cards readable at 1col; on slightly wider phones allow compact 2col */
+@media (min-width:560px) and (max-width:840px){
+  .cars{grid-template-columns:repeat(2,1fr);gap:30px 18px}
+  .car h3{font-size:14.5px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <a href="home.html" class="logo">DRIVE CLUB TOKYO<small>新木場発・高級車シェアリング</small></a>
+    <button class="menu-btn" id="menuBtn" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="gnav" id="gnav" aria-label="グローバルナビゲーション">
+      <a href="home.html">ホーム</a>
+      <a href="home.html#price">料金目安</a>
+      <a href="home.html#flow">ご利用の流れ</a>
+      <a href="#contact" class="nav-cta">ご予約・お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<section class="phero">
+  <div class="phero-in">
+    <p class="eyebrow">Car Lineup</p>
+    <h1>カーラインナップ</h1>
+    <p class="lead">世界最高峰のロールスロイスから、伝説のR34 GT-Rまで。全25台、すべて当日利用が可能です。気になる一台から、特別な一日を。</p>
+    <p class="bread"><a href="home.html">HOME</a>　/　カーラインナップ</p>
+  </div>
+</section>
+
+<div class="lineup">
+  <aside class="rail" aria-label="ブランド索引">
+    <p class="r-label">INDEX</p>
+    <ul id="railList">
+      <li><a href="#rolls-royce">Rolls-Royce<small>6</small></a></li>
+      <li><a href="#mercedes">Mercedes<small>3</small></a></li>
+      <li><a href="#porsche">Porsche<small>3</small></a></li>
+      <li><a href="#bentley">Bentley<small>2</small></a></li>
+      <li><a href="#landrover">Land Rover<small>3</small></a></li>
+      <li><a href="#japan">国産車<small>4</small></a></li>
+      <li><a href="#imports">人気輸入車<small>4</small></a></li>
+    </ul>
+    <p class="rail-cta">車種選びに迷ったら、利用シーンに合わせてご提案します。<br><a href="#contact">LINEで相談する →</a></p>
+  </aside>
+
+  <main>
+    <section class="brand" id="rolls-royce">
+      <div class="b-head rv"><h2>Rolls-Royce</h2><span class="b-jp">ロールスロイス</span><span class="b-count">6 CARS</span></div>
+      <div class="cars">
+        <a class="car rv" href="https://sawaauto.jp/rolls-royce/"><div class="ph"><img src="https://sawaauto.jp/wp-content/uploads/2025/08/IMG_1125-1024x768.jpg" alt="ロールスロイス カリナン シリーズⅡ" loading="lazy"></div><h3>カリナン シリーズⅡ</h3><p class="c-price"><span>当日利用</span><b>¥300,000<small> 〜</small></b></p></a>
+        <a class="car rv" href="https://sawaauto.jp/rolls-royce/"><div class="ph"><img src="https://sawaauto.jp/wp-content/uploads/2026/06/IMG_0458.JPG-1024x768.jpg" alt="ロールスロイス カリナン ブラックバッジ" loading="lazy"></div><h3>カリナン ブラックバッジ</h3><p class="c-price"><span>当日利用</span><b>¥240,000<small> 〜</small></b></p></a>
+        <a class="car rv" href="https://sawaauto.jp/rolls-royce/"><div class="ph"><img src="https://sawaauto.jp/wp-content/uploads/2025/07/IMG_2159-1-1024x768.jpg" alt="ロールスロイス カリナン" loading="lazy"></div><h3>カリナン</h3><p class="c-price"><span>当日利用</span><b>¥240,000<small> 〜</small></b></p></a>
+        <a class="car rv" href="https://sawaauto.jp/rolls-royce/"><div class="ph"><img src="https://sawaauto.jp/wp-content/uploads/2025/07/IMG_0083-1-768x576.jpg" alt="ロールスロイス カリナン（2台目）" loading="lazy"></div><h3>カリナン</h3><p class="c-price"><span>当日利用</span><b>¥240,000<small> 〜</small></b></p></a>
+        <a class="car rv" href="https://sawaauto.jp/rolls-royce/"><div class="ph"><img src="https://sawaauto.jp/wp-content/uploads/2026/06/IMG_6501-768x576.jpg" alt="ロールスロイス ゴーストEWB（ロング）" loading="lazy"></div><h3>ゴースト EWB（ロング）</h3><p class="c-price"><span>当日利用</span><b>¥120,000<small> 〜</small></b></p></a>
+        <a class="car rv" href="https://sawaauto.jp/rolls-royce/"><div class="ph"><img src="https://sawaauto.jp/wp-content/uploads/2025/10/IMG_0966-768x576.jpg" alt="ロールスロイス コーニッシュⅢ" loading="lazy"></div><h3>コーニッシュ Ⅲ</h3><p class="c-price"><span>当日利用</span><b>¥70,000<small> 〜</small></b></p></a>
+      </div>
+    </section>
+
+    <section class="brand" id="mercedes">
+      <div class="b-head rv"><h2>Mercedes</h2><span class="b-jp">メルセデス</span><span class="b-count">3 CARS</span></div>
+      <div class="cars">
+        <a class="car rv" href="https://sawaauto.jp/mercedes-benz/"><div class="ph"><img src="https://sawaauto.jp/wp-content/uploads/2026/06/IMG_1733.JPG-768x576.jpg" alt="メルセデス マイバッハ GLS600" loading="lazy"></div><h3>マイバッハ GLS600</h3><p class="c-price"><span>当日利用</span><b>¥120,000<small> 〜</small></b></p></a>
+        <a class="car rv" href="https://sawaauto.jp/mercedes-benz/"><div class="ph"><img src="https://sawaauto.jp/wp-content/uploads/2026/06/4eb20079290c98ffeaee876dd14924c9-768x571.jpg" alt="メルセデス G450d" loading="lazy"></div><h3>G450d</h3><p class="c-price"><span>当日利用</span><b>¥70,000<small> 〜</small></b></p></a>
+        <a class="car rv" href="https://sawaauto.jp/mercedes-benz/"><div class="ph"><img src="https://sawaauto.jp/wp-content/uploads/2026/06/IMG_1511.jpg" alt="メルセデス 560SEL" loading="lazy"></div><h3>560SEL</h3><p class="c-price"><span>当日利用</span><b>¥50,000<small> 〜</small></b></p></a>
+      </div>
+    </section>
+
+    <section class="brand" id="porsche">
+      <div class="b-head rv"><h2>Porsche</h2><span class="b-jp">ポルシェ</span><span class="b-count">3 CARS</span></div>
+      <div class="cars">
+        <a class="car rv" href="https://sawaauto.jp/porsche/"><div class="ph"><img src="https://sawaauto.jp/wp-content/uploads/2026/06/IMG_6198.jpg" alt="ポルシェ 911カレラ 992型 GTS" loading="lazy"></div><h3>911カレラ 992型 GTS</h3><p class="c-price"><span>当日利用</span><b>¥90,000<small> 〜</small></b></p></a>
+        <a class="car rv" href="https://sawaauto.jp/porsche/"><div class="ph"><img src="https://sawaauto.jp/wp-content/uploads/2025/07/IMG_2345.jpg" alt="ポルシェ 911カレラ 992型 カブリオレ" loading="lazy"></div><h3>911カレラ 992型 カブリオレ</h3><p class="c-price"><span>当日利用</span><b>¥90,000<small> 〜</small></b></p></a>
+        <a class="car rv" href="https://sawaauto.jp/porsche/"><div class="ph"><img src="https://sawaauto.jp/wp-content/uploads/2026/02/IMG_6963.jpg" alt="ポルシェ パナメーラGTS" loading="lazy"></div><h3>パナメーラ GTS</h3><p class="c-price"><span>当日利用</span><b>¥90,000<small> 〜</small></b></p></a>
+      </div>
+    </section>
+
+    <section class="brand" id="bentley">
+      <div class="b-head rv"><h2>Bentley</h2><span class="b-jp">ベントレー</span><span class="b-count">2 CARS</span></div>
+      <div class="cars">
+        <a class="car rv" href="https://sawaauto.jp/bentley/"><div class="ph"><img src="https://sawaauto.jp/wp-content/uploads/2026/06/IMG_2851.jpg" alt="ベントレー コンチネンタルGTC / Speed" loading="lazy"></div><h3>コンチネンタル GTC / Speed</h3><p class="c-price"><span>当日利用</span><b>¥70,000<small> 〜</small></b></p></a>
+        <a class="car rv" href="https://sawaauto.jp/bentley/"><div class="ph"><img src="https://sawaauto.jp/wp-content/uploads/2025/07/6aa09fad144cfdef7e16e304bf8bbd99.jpg" alt="ベントレー フライングスパー W12 S" loading="lazy"></div><h3>フライングスパー W12 S</h3><p class="c-price"><span>当日利用</span><b>¥70,000<small> 〜</small></b></p></a>
+      </div>
+    </section>
+
+    <section class="brand" id="landrover">
+      <div class="b-head rv"><h2>Land Rover</h2><span class="b-jp">ランドローバー</span><span class="b-count">3 CARS</span></div>
+      <div class="cars">
+        <a class="car rv" href="https://sawaauto.jp/land-rover/"><div class="ph"><img src="https://sawaauto.jp/wp-content/uploads/2026/06/IMG_1181.jpg" alt="ランドローバー 現行レンジローバー" loading="lazy"></div><h3>レンジローバー（現行）</h3><p class="c-price"><span>当日利用</span><b>¥70,000<small> 〜</small></b></p></a>
+        <a class="car rv" href="https://sawaauto.jp/land-rover/"><div class="ph"><img src="https://sawaauto.jp/wp-content/uploads/2026/06/IMG_6080-1024x768.jpg" alt="ランドローバー レンジローバーVOGUE" loading="lazy"></div><h3>レンジローバー VOGUE</h3><p class="c-price"><span>当日利用</span><b>¥50,000<small> 〜</small></b></p></a>
+        <a class="car rv" href="https://sawaauto.jp/land-rover/"><div class="ph"><img src="https://sawaauto.jp/wp-content/uploads/2026/06/IMG_1667.jpg" alt="ランドローバー ディフェンダー" loading="lazy"></div><h3>ディフェンダー</h3><p class="c-price"><span>当日利用</span><b>¥70,000<small> 〜</small></b></p></a>
+      </div>
+    </section>
+
+    <section class="brand" id="japan">
+      <div class="b-head rv"><h2>Japan</h2><span class="b-jp">国産車</span><span class="b-count">4 CARS</span></div>
+      <div class="cars">
+        <a class="car rv" href="https://sawaauto.jp/nissan/"><div class="ph"><img src="https://sawaauto.jp/wp-content/uploads/2026/06/IMG_6258-1024x768.jpg" alt="日産 スカイラインGT-R R34" loading="lazy"></div><h3>日産 スカイライン GT-R（R34）</h3><p class="c-price"><span>当日利用</span><b>¥60,000<small> 〜</small></b></p></a>
+        <a class="car rv" href="https://sawaauto.jp/toyota/"><div class="ph"><img src="https://sawaauto.jp/wp-content/uploads/2025/12/IMG_0562.jpg" alt="トヨタ 40アルファード エグゼクティブラウンジ" loading="lazy"></div><h3>40アルファード エグゼクティブラウンジ</h3><p class="c-price"><span>当日利用</span><b>¥50,000<small> 〜</small></b></p></a>
+        <a class="car rv" href="https://sawaauto.jp/lexus/"><div class="ph"><img src="https://sawaauto.jp/wp-content/uploads/2026/06/IMG_6274.jpg" alt="レクサス LX570" loading="lazy"></div><h3>レクサス LX570</h3><p class="c-price"><span>当日利用</span><b>¥50,000<small> 〜</small></b></p></a>
+        <a class="car rv" href="https://sawaauto.jp/motorhome/"><div class="ph"><img src="https://sawaauto.jp/wp-content/uploads/2026/06/IMG_6952.jpg" alt="カムロード キャンピングカー" loading="lazy"></div><h3>カムロード キャンピングカー</h3><p class="c-price"><span>当日利用</span><b>¥30,000<small> 〜</small></b></p></a>
+      </div>
+    </section>
+
+    <section class="brand" id="imports">
+      <div class="b-head rv"><h2>Imports</h2><span class="b-jp">その他人気輸入車</span><span class="b-count">4 CARS</span></div>
+      <div class="cars">
+        <a class="car rv" href="https://sawaauto.jp/lotus/"><div class="ph"><img src="https://sawaauto.jp/wp-content/uploads/2025/07/IMG_0453.jpg" alt="ロータス エヴォーラ400" loading="lazy"></div><h3>ロータス エヴォーラ 400</h3><p class="c-price"><span>当日利用</span><b>¥40,000<small> 〜</small></b></p></a>
+        <a class="car rv" href="https://sawaauto.jp/mini/"><div class="ph"><img src="https://sawaauto.jp/wp-content/uploads/2026/06/IMG_6060-1024x768.jpg" alt="ミニコンバーチブル John Cooper Works" loading="lazy"></div><h3>ミニコンバーチブル JCW</h3><p class="c-price"><span>当日利用</span><b>¥30,000<small> 〜</small></b></p></a>
+        <a class="car rv" href="https://sawaauto.jp/hummer/"><div class="ph"><img src="https://sawaauto.jp/wp-content/uploads/2026/06/IMG_6220.jpg" alt="ハマー H2" loading="lazy"></div><h3>ハマー H2</h3><p class="c-price"><span>当日利用</span><b>¥50,000<small> 〜</small></b></p></a>
+        <a class="car rv" href="https://sawaauto.jp/jeep/"><div class="ph"><img src="https://sawaauto.jp/wp-content/uploads/2026/06/E2F1DBA3-40C0-49AD-BBAA-66A2AA662F27.jpg" alt="Jeep ラングラー" loading="lazy"></div><h3>Jeep ラングラー</h3><p class="c-price"><span>当日利用</span><b>¥30,000<small> 〜</small></b></p></a>
+      </div>
+    </section>
+  </main>
+</div>
+
+<section class="cta" id="contact">
+  <p class="eyebrow">Reservation</p>
+  <h2>気になる一台は見つかりましたか？</h2>
+  <p>車種選びに迷ったら、ご利用シーンに合わせて最適な一台をご提案します。<br>当サービスは完全会員制のため、ご利用日に余裕をもってご相談ください。</p>
+  <div class="cta-actions">
+    <a class="btn btn-gold" href="https://sawaauto.jp/contact/">公式LINE・フォームで相談<span class="arr">→</span></a>
+    <a class="btn btn-ghost" href="home.html#flow">ご利用の流れをみる<span class="arr">→</span></a>
+  </div>
+  <p class="cta-tel">お電話でのお問い合わせ<a href="tel:0355346485">03-5534-6485</a></p>
+</section>
+
+<footer>
+  <p>DRIVE CLUB TOKYO ｜ 〒136-0082 東京都江東区新木場3-4-8 ｜ <a href="tel:0355346485">03-5534-6485</a></p>
+  <p class="copyright">© DRIVE CLUB TOKYO. All rights reserved.</p>
+</footer>
+
+<script>
+const btn=document.getElementById('menuBtn'),nav=document.getElementById('gnav');
+btn.addEventListener('click',()=>{const o=nav.classList.toggle('open');btn.classList.toggle('open',o);btn.setAttribute('aria-expanded',o)});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');btn.classList.remove('open')}));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+const links=[...document.querySelectorAll('#railList a')];
+const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+const spy=new IntersectionObserver(es=>{
+  es.forEach(e=>{
+    if(e.isIntersecting){
+      links.forEach(l=>l.classList.toggle('act',l.getAttribute('href')==='#'+e.target.id));
+      const act=document.querySelector('#railList a.act');
+      if(act&&innerWidth<=840)act.scrollIntoView({block:'nearest',inline:'center',behavior:'smooth'});
+    }
+  });
+},{rootMargin:'-30% 0px -60% 0px'});
+secs.forEach(s=>s&&spy.observe(s));
+</script>
+</body>
+</html>
